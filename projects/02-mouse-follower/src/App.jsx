@@ -26,27 +26,28 @@ const FollowMouse = () => {
   }, [enabled])
 
   // no cursor
-  useEffect(() => {
-    document.body.classList.toggle('no-cursor', enabled)
+  // useEffect(() => {
+  //   document.body.classList.toggle('no-cursor', enabled)
 
-    return () => {
-      document.body.classList.remove('no-cursor')
-    }
-  }, [enabled])
+  //   return () => {
+  //     document.body.classList.remove('no-cursor')
+  //   }
+  // }, [enabled])
 
   return (
     <>
       <main>
         <div style={{
           position: 'absolute',
-          backgroundColor: 'rgba(177, 93, 255, 0.479)',
+          backgroundColor: 'rgba(80, 80, 80, 0.2)',
           borderRadius: '50%',
           opacity: .8,
+          backdropFilter: "blur(2px)",
           pointerEvents: 'none',
-          left: -25,
-          top: -25,
-          width: 50,
-          height: 50,
+          left: -100,
+          top: -100,
+          width: 200,
+          height: 200,
           transform: `translate(${position.x}px, ${position.y}px)`
         }}></div>
         <button onClick={() => setEnabled(!enabled)}>
